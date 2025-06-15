@@ -1,0 +1,13 @@
+<% flash.each do |type, messages| %>
+  <div class="py-2 px-3 mb-5 font-medium rounded-lg <%= type == "alert" ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500' %>" id="<%= type %>">
+    <% if messages.is_a?(Array) %>
+      <ul class="list-disc list-inside">
+        <% messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p><%= messages %></p>
+    <% end %>
+  </div>
+<% end %>
