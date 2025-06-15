@@ -1,0 +1,15 @@
+<div class="bg-white p-8 rounded shadow-xl ring ring-gray-300 w-80 h-56 flex flex-col justify-between">
+    <h3 class="text-lg font-semibold mb-2"><%= room.name %></h3>
+    <div class="text-md font-normal overflow-auto text-gray-600 mb-3"><%= room.description %></div>
+
+  <div class="flex items-end justify-between mt-auto">
+    <%= button_to room_path(room),
+                  method: :delete,
+                  class: "rounded bg-red-500 px-4 py-1 hover:bg-red-600 text-white",
+                  data: { turbo_confirm: "Delete this room?" } do %>
+      Delete
+    <% end %>
+
+    <%= link_to sanitize("Open &rarr;"), room_path(room), class: "text-blue-600" %>
+  </div>
+</div>

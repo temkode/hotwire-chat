@@ -1,4 +1,14 @@
 <div class="container px-5">
-  <h1>Chat rooms</h1>
+  <%= render "shared/flash_messages" %>
 
+  <div class="flex items-end gap-4">
+    <h1 class="font-bold text-4xl">Chat rooms</h1>
+    <%= link_to "New room",
+                new_room_path,
+                class: "mb-1 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition" %>
+  </div>
+
+  <div class="mt-16 flex flex-wrap gap-6 justify-start">
+    <%= render @rooms %>
+  </div>
 </div>

@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <nav class="fixed top-0 left-0 right-0 shadow-md py-5 flex justify-center">
+    <nav class="fixed top-0 left-0 right-0 shadow-md py-5 bg-white flex justify-center z-9999">
       <div class="container px-5 flex justify-between items-center">
         <h1 class="text-xl font-bold">Hotwire-Chat</h1>
         <%= button_to "Log out",
@@ -32,7 +32,7 @@
                       class: "px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition text-sm" %>
       </div>
     </nav>
-    <main class="mt-28 flex justify-center">
+    <main class="mt-24 flex justify-center">
       <%= yield %>
     </main>
   </body>

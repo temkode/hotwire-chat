@@ -1,0 +1,8 @@
+<div class="container px-5 flex flex-col">
+  <%= render "shared/flash_messages" %>
+  <%= link_to sanitize("&larr; Back to rooms"), rooms_path, class: "font-normal text-md" %>
+
+  <h1 class="mt-2 font-bold text-4xl"><%= @room.name %></h1>
+  <div class="w-full max-w-180 h-[60vh] bg-gray-200 rounded mt-4">
+  </div>
+</div>
