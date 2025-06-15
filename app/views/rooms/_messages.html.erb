@@ -1,6 +1,6 @@
-<div class="w-full max-w-2xl h-[65vh] overflow-y-auto bg-gray-200 rounded my-4 p-4"
+<div id="messages" class="w-full max-w-2xl h-[65vh] overflow-y-auto bg-gray-200 rounded my-4 p-4"
      data-controller="chatbox">
-  <% @messages.each do |message| %>
+  <% room.messages.includes(:user).each do |message| %>
     <div class="mb-4 flex justify-between items-center">
       <div>
         <strong id="yapper"><%= message.user.username %>:</strong>

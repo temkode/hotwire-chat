@@ -9,9 +9,7 @@ class MessagesController < ApplicationController
     @message = @room.messages.build(message_params)
     @message.user = current_user
 
-    if @message.save
-      redirect_to room_path(@room)
-    else
+    unless @message.save
       redirect_to room_path(@room), alert: "Error sending message"
     end
   end

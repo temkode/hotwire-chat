@@ -1,10 +1,12 @@
+<%= turbo_stream_from @room, "messages" %>
+
 <div class="container px-5 flex flex-col">
   <%= render "shared/flash_messages" %>
   <%= link_to sanitize("&larr; Back to rooms"), rooms_path, class: "font-normal text-md" %>
 
   <h1 class="mt-2 font-bold text-4xl"><%= @room.name %></h1>
 
-  <%= render partial: 'rooms/messages' %>
+  <%= render partial: 'rooms/messages', locals: { room: @room } %>
 
   <%= form_with model: [@room, Message.new],
                 data: { controller: "chat-form",
