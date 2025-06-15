@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @messages = @room.messages.includes(:user).recent
   end
 
   def new

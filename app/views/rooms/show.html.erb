@@ -3,6 +3,13 @@
   <%= link_to sanitize("&larr; Back to rooms"), rooms_path, class: "font-normal text-md" %>
 
   <h1 class="mt-2 font-bold text-4xl"><%= @room.name %></h1>
-  <div class="w-full max-w-180 h-[60vh] bg-gray-200 rounded mt-4">
-  </div>
+
+  <%= render partial: 'rooms/messages' %>
+
+  <%= form_with model: [@room, Message.new] do |form| %>
+    <div class="flex w-full max-w-2xl">
+      <%= form.text_area :content, placeholder: "Your message...", class: "flex-1 border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      <%= form.submit "Send", class: "ml-2 bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition" %>
+    </div>
+  <% end %>
 </div>
