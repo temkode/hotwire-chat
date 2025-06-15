@@ -6,9 +6,14 @@
 
   <%= render partial: 'rooms/messages' %>
 
-  <%= form_with model: [@room, Message.new] do |form| %>
+  <%= form_with model: [@room, Message.new],
+                data: { controller: "chat-form",
+                        action: "turbo:submit-end->chat-form#clearForm" } do |form| %>
     <div class="flex w-full max-w-2xl">
-      <%= form.text_area :content, placeholder: "Your message...", class: "flex-1 border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      <%= form.text_area :content,
+                         data: { chat_form_target: "textarea" },
+                         placeholder: "Your message...",
+                         class: "flex-1 border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
       <%= form.submit "Send", class: "ml-2 bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition" %>
     </div>
   <% end %>

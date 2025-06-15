@@ -26,10 +26,15 @@
     <nav class="fixed top-0 left-0 right-0 shadow-md py-5 bg-white flex justify-center z-9999">
       <div class="container px-5 flex justify-between items-center">
         <h1 class="text-xl font-bold">Hotwire-Chat</h1>
-        <%= button_to "Log out",
-                      session_path,
-                      method: :delete,
-                      class: "px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition text-sm" %>
+
+        <div class="flex gap-6 items-center">
+          <span>Hello, <strong id="current_username"><%= current_user.username %></strong></span>
+          <%= button_to "Log out",
+                        session_path,
+                        method: :delete,
+                        class: "px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition text-sm" %>
+
+        </div>
       </div>
     </nav>
     <main class="mt-24 mb-10 flex justify-center">
