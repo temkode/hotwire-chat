@@ -1,24 +1,8 @@
-# README
+# Hotwire chat
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Temporary demo: https://temuuj.in
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Resources used:
+- [Kamal deployment tutorial](https://www.youtube.com/watch?v=9mHGKBoYeNI)
+- [Rails 8 Getting Started](https://guides.rubyonrails.org/getting_started.html)
+- [Hotwire tutorial](https://www.hotrails.dev/turbo-rails)
